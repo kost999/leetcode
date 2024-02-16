@@ -25,6 +25,9 @@ func canPlaceFlowers(flowerbed []int, n int) bool {
 			(k == ln-1 || flowerbed[k+1] == 0) {
 			flowerbed[k] = 1
 			count++
+			if count >= n {
+				return true
+			}
 		}
 	}
 
