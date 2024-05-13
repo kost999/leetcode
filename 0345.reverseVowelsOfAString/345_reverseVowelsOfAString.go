@@ -1,16 +1,4 @@
-package main
-
-import (
-	"github.com/stretchr/testify/assert"
-	"testing"
-)
-
-func TestReverseVowels(t *testing.T) {
-	assert.Equal(t, "holle", reverseVowels("hello"))
-	assert.Equal(t, "leotcede", reverseVowels("leetcode"))
-
-	assert.Equal(t, "oteta", reverseVowels("ateto"))
-}
+package leetcode
 
 func reverseVowels(s string) string {
 	lo, hi := 0, len(s)-1
