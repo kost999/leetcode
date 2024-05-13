@@ -1,12 +1,12 @@
 package leetcode
 
 import (
-	"fmt"
+	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
 func TestFirstUniqueCharacter(t *testing.T) {
-	fmt.Println(firstUniqChar("leetcode"))
-	fmt.Println(firstUniqChar("loveleetcode"))
-	fmt.Println(firstUniqChar("aabb"))
+	assert.Equal(t, 0, firstUniqChar("leetcode"))
+	assert.Equal(t, 2, firstUniqChar("loveleetcode"))
+	assert.Equal(t, -1, firstUniqChar("aabb"))
 }

@@ -1,12 +1,12 @@
 package leetcode
 
 import (
-	"fmt"
+	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
 func TestMergeStrings(t *testing.T) {
-	fmt.Println(mergeAlternately("abc", "pqr"))
-	fmt.Println(mergeAlternately("ab", "pqrs"))
-	fmt.Println(mergeAlternately("abcd", "pq"))
+	assert.Equal(t, "apbqcr", mergeAlternately("abc", "pqr"))
+	assert.Equal(t, "apbqrs", mergeAlternately("ab", "pqrs"))
+	assert.Equal(t, "apbqcd", mergeAlternately("abcd", "pq"))
 }

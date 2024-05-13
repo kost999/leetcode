@@ -5,6 +5,7 @@ type Letter struct {
 	Count int
 }
 
+// todo: переписать, не проходят тесты
 func firstUniqChar(s string) int {
 	m := make(map[int32]Letter)
 	r := make(map[int]bool)
