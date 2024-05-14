@@ -5,28 +5,33 @@ type Letter struct {
 	Count int
 }
 
-// todo: переписать, не проходят тесты
 func firstUniqChar(s string) int {
-	m := make(map[int32]Letter)
-	r := make(map[int]bool)
+	m := make(map[int32]interface{})
+	r := make(map[int32]int)
 
 	for k, v := range s {
-		if _, ok := m[v]; ok {
-			c := m[v].Count
-			c++
-		} else {
-			m[v] = Letter{
-				Key:   k,
-				Count: 1,
-			}
-		}
+		_, ok := r[v]
+		_, ok2 := m[v]
 
-		if m[v].Count == 1 {
-			r[m[v].Key] = true
-		} else {
-			delete(r, m[v].Key)
+		if false == ok && false == ok2 {
+			r[v] = k
+		} else if ok2 {
+			continue
+		} else if ok {
+			m[v] = 0
+			delete(r, v)
 		}
 	}
 
-	return -1
+	mini := -1
+	for _, v := range r {
+		if mini < 0 {
+			mini = v
+		}
+		if v < mini {
+			mini = v
+		}
+	}
+
+	return mini
 }
